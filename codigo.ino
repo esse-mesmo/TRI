@@ -81,3 +81,33 @@ void cruzamento() {
   delay(5000);
   
 }
+
+
+//Segundo arduino
+
+int buttonPin = 7;
+int ledPin = 10;
+int estadoButton = 0;
+int buzzer = 6;
+
+
+void setup()
+{
+  pinMode(ledPin , OUTPUT);
+  pinMode (buttonPin , INPUT);
+  pinMode(buzzer, OUTPUT);
+  
+}
+
+void loop()
+{
+  estadoButton = digitalRead (buttonPin);
+  if ( estadoButton == HIGH ) { 
+    digitalWrite(ledPin , HIGH);
+    tone(buzzer,262,5000);
+    delay(5000);
+  }
+  else { 
+    digitalWrite (ledPin , LOW ); 
+  }
+}
